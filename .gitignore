@@ -1,0 +1,5 @@
+/__pycache__
+/**/__pycache__
+/vae_torch/
+/sac/
+/optimal_lines/*_optimal_line_stripped.csv
