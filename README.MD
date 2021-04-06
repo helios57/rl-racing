@@ -8,7 +8,7 @@
 
 4. gather telemetry data by manual drive the course
 
-* `gather_manual_data.py` close the pygame window if you gathered enough data
+* `gather_manual_data.py` close the pygame window if you gathered enough data, the data is only written on close
 
 5. train the vae (variational autoencoder) with the gathered data
 
@@ -27,6 +27,6 @@
 
 * `reward.py`
 
-
 TODO:
+
 * I had extended telemetry turned off, so perhaps a quick telemetry frame check and give error message "Please turn on Extended Telemetry"
