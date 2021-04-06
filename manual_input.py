@@ -1,7 +1,7 @@
 import pygame
 
 from config import manual_input_use_joystick, joystick_steering_axis, \
-  joystick_throttle_axis, joystick_quit_button
+  joystick_throttle_axis, joystick_quit_button, joystick_port
 
 
 class ManualInput:
@@ -15,8 +15,9 @@ class ManualInput:
     pygame.font.init()
     width, height = 128, 128
     self.screen = pygame.display.set_mode((width, height))
-    self.joystick = pygame.joystick.Joystick(0)
-    self.joystick.init()
+    if manual_input_use_joystick:
+      self.joystick = pygame.joystick.Joystick(joystick_port)
+      self.joystick.init()
 
   def loop(self, img=None):
     if img is not None:

@@ -53,11 +53,7 @@ def reward_function(telemetrie, index, steering, throttle):
     reward = -reward
 
   # punish wrong steering directly
-  reward = reward + jerk_penalty * 0.01
-
-  # punish breaking or driving backwards
-  if throttle is not None and throttle < 0:
-    reward = reward + throttle
+  reward = reward + jerk_penalty * 0.005
 
   print(index, reward, race_line_reward, direction_reward, jerk_penalty)
   return reward

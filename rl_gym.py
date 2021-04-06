@@ -33,11 +33,10 @@ class RLEnv(gym.Env):
     :param action: (np.ndarray)
     :return: (np.ndarray, float, bool, dict)
     """
-    if self.manual_input is not None:
+    if self.manual_input is not None and len(self.client.telemetrie) > 2:
       self.manual_input.loop(self.client.telemetrie[len(self.client.telemetrie) - 1].img)
     throttle = action[1]  # * 0.35 + 0.65
-    if throttle > 0.5:
-      throttle = 1
+    throttle = min(1, throttle + 0.5)  # bias forward
     steering = action[0] ** 3  # make steering exponential
     if self.manual_input is not None:
       printstr = str(throttle) + " " + str(steering) + " "

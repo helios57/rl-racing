@@ -2,13 +2,17 @@
 
 * `python -m pip install -r requirements.txt`
 
-2. check / update config.py
+2. check / update config.py & create referenced directories
+
+* mkdir sac_telemetry
+* mkdir vae_torch
 
 3. Start the Sim (https://github.com/tawnkramer/sdsandbox) and open the track, you may click on NN Control over Network (optional but removes the dummy car)
 
-4. gather telemetry data by manual drive the course
+4. gather telemetry data by manual drive the course. To gather data for the vae you do not need to drive clean, make sure you get all possible angles/pictures possible, I would recommend about 3 laps
+   or more
 
-* `gather_manual_data.py` close the pygame window if you gathered enough data, the data is only written on close
+* `gather_manual_data.py` press "q" or the definied joystick quit button to save the recorded data
 
 5. train the vae (variational autoencoder) with the gathered data
 

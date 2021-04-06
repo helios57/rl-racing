@@ -23,7 +23,7 @@ def train_sac():
   env1 = RLEnv(vae)
   env1.client.collecting = False
   policy_kwargs = {}
-  policy_kwargs["net_arch"] = [512, 512, 512]
+  policy_kwargs["net_arch"] = [512, 512]
   sac = SAC(env=env1, policy=MlpPolicy,
             policy_kwargs=policy_kwargs,
             buffer_size=20000,
@@ -34,7 +34,7 @@ def train_sac():
             gradient_steps=-1,
             learning_rate=0.0001)
   # uncomment if you want to load a model and retrain it
-  sac = sac.load(rl_model, env=env1)
+  # sac = sac.load(rl_model, env=env1)
   sac.learning_rate = 0.0001
   sac._setup_lr_schedule()
   env1.client.hardReset()
