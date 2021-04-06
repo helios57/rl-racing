@@ -6,6 +6,7 @@ enable_manual_input_during_training = False
 manual_input_use_joystick = False
 joystick_steering_axis = 0
 joystick_throttle_axis = 1
+joystick_quit_button = 0
 telemetry_data = 'D:/sac_telemetry/'
 vae_data = 'vae_torch/vae.pkl'
 car_name = 'Helios1'

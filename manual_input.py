@@ -1,6 +1,7 @@
 import pygame
 
-from config import manual_input_use_joystick, joystick_steering_axis, joystick_throttle_axis
+from config import manual_input_use_joystick, joystick_steering_axis, \
+  joystick_throttle_axis, joystick_quit_button
 
 
 class ManualInput:
@@ -53,3 +54,4 @@ class ManualInput:
       if manual_input_use_joystick:
         self.st = self.joystick.get_axis(joystick_steering_axis)
         self.th = -self.joystick.get_axis(joystick_throttle_axis)
+        self.q = self.joystick.get_button(joystick_quit_button)
