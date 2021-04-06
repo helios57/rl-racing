@@ -8,7 +8,7 @@
 
 4. gather telemetry data by manual drive the course
 
-* `gather_manual_data.py`
+* `gather_manual_data.py` close the pygame window if you gathered enough data
 
 5. train the vae (variational autoencoder) with the gathered data
 

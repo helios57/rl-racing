@@ -32,10 +32,10 @@ def train_sac():
             batch_size=256,
             verbose=2,
             gradient_steps=-1,
-            learning_rate=0.001)
+            learning_rate=0.0001)
   # uncomment if you want to load a model and retrain it
   sac = sac.load(rl_model, env=env1)
-  sac.learning_rate = 0.001
+  sac.learning_rate = 0.0001
   sac._setup_lr_schedule()
   env1.client.hardReset()
   env1.client.initCar()

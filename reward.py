@@ -27,7 +27,7 @@ def reward_function(telemetrie, index, steering, throttle):
   before = telemetrie[index - 2]
   speed_vec = np.asarray([current.pos_x - before.pos_x, current.pos_z - before.pos_z])
   race_line, vec, race_line_segment_index = get_distance_to_race_line(current.pos_x, current.pos_z)
-  race_line_reward = (1 - (fabs(race_line) / 9.0))
+  race_line_reward = (1 - (fabs(race_line) / 20.0))
 
   direction_reward = 1
   if np.linalg.norm(vec) > 0 and np.linalg.norm(speed_vec) > 0:
